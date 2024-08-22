@@ -11,19 +11,21 @@
 > > 1. terminal 에서 `./gradlew clean build` 입력
 > > 2. 새로 생성된 `build/libs/[프로젝트명]-SNAPSHOT.jar`를 이미지로 생성해야함
 >
-> ## Dockerfile 생성, 작성, 실행
+> ## Dockerfile 생성 및 작성
 > > 3. 프로젝트 폴더 하위에 dockerfile 생성
 > > 4. jar파일을 이미지로 만들기 위해서는 JAVA 이미지(openjdk)가 필요.
 > > 5. FROM openjdk:[프로젝트 java 버전]
-> > 6. ARG JAR_FILE=/build/libs/[프로젝트명]-SNAPSHOT.jar
+> > 6. ARG [변수명]=/build/libs/[프로젝트명]-SNAPSHOT.jar
 > > > ARG : 변수 선언
 > >
-> > 7. COPY ${JAR_FILE} /[파일명].jar
+> > 7. COPY ${변수명} /[파일명].jar
 > > > 변수를 사용하려면 ${변수명}을 이용한다.
-> > > 위의 뜻은 변수 JAR_FILE
+> > > 위의 뜻은 ${변수명}에 해당하는 파일을 현재위치(/)에 [파일명]으로 복사
 > >
-> > 8. ENTRYPOINT [ "" ]
-> > 9. 
+> > 8. ENTRYPOINT [ "java", "-jar", "/[파일명].jar" ]
+> > > tmp
+> 
+> 9. terminal에서 docker build -t doc_boot-img
 
 
 
