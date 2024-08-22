@@ -25,8 +25,13 @@
 > > 8. ENTRYPOINT [ "java", "-jar", "/[파일명].jar" ]
 > > > tmp
 > 
-> 9. terminal에서 docker build -t doc_boot-img
+> 9. terminal에서 docker build -t [이미지명] [dockerfile 위치]
+> > dockerfile 위치의 경우 해당 파일이 위치한 곳에서 명령어를 실행하는 경우가 대부분으로
+> > [dockerfile 위치]는 현재 위치를 뜻하는 " . "로 작성해준다.
 
+## Docker와 local에서 하는 가장 큰 차이
+> 로컬같은 경우 같은 프로젝트를 실행하기 위해서는 모든 환경을 맞추어줘야한다.
+> 하지만 docker의 경우 이미지를 내려받고 컨테이너를 만들면 되기에 배포가 더 간편하다.
 
 
 
